@@ -32,6 +32,16 @@ router.get('/', (req, res) => {
     })
 })
 
+//NOTE Show
+router.get('/:listingIndex', (req, res) => {
+    db.Computer.findById(req.params.listingIndex, (err, oneListingDB) => {
+        if (err) return res.send(err);
+        res.render('computer/show.ejs', {
+            oneComputer: oneListingDB
+        })
+
+    })
+})
 
 
 
