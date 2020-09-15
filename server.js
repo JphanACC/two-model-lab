@@ -9,12 +9,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index.ejs');
 })
+
+
 
 //listener
 app.listen(PORT, () => {
     console.log(`Port listening: ${PORT}`);
-
 })
