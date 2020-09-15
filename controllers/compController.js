@@ -43,6 +43,14 @@ router.get('/:listingIndex', (req, res) => {
     })
 })
 
+//NOTE Delete
+router.delete('/:listingIndex', (req, res) => {
+    db.Computer.findByIdAndDelete(req.params.listingIndex, (err, deletedListingDB) => {
+        if (err) return res.send(err);
+        res.redirect('/computerSection/')
+    })
+})
+
 
 
 module.exports = router;
