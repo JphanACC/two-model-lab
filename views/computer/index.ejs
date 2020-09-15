@@ -9,6 +9,22 @@
 
 <body>
     <h1>Welcome to Computer Section</h1>
+    <nav>
+        <a href="/computerSection/createListing">Create New Listing</a>
+    </nav>
+    <ul>
+
+        <% computerList.forEach(computer => { %>
+            <li>
+                <a href="/computerSection/<%= computer._id %> ">
+                    <%= computer.name %>
+                </a>
+            </li>
+            <% }) %>
+                <% if (computerList.length === 0) { %>
+                    <p>There is no listing yet.</p>
+                    <% } %>
+    </ul>
 </body>
 
 </html>
