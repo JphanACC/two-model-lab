@@ -4,6 +4,8 @@ const connectString = 'mongodb://localhost:27017/inventory'
 mongoose.connect(connectString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
+
 }).then(function() {
     console.log('MongoDB is connected..');
 }).catch(function(error) {
