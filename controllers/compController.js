@@ -36,6 +36,8 @@ router.get('/', (req, res) => {
 router.get('/:listingIndex', (req, res) => {
     db.Computer.findById(req.params.listingIndex, (err, oneListingDB) => {
         if (err) return res.send(err);
+        console.log(req.params.listingIndex);
+
         res.render('computer/show.ejs', {
             oneComputer: oneListingDB
         })
