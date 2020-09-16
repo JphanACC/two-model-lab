@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= oneTV.name %>
+    </title>
+</head>
+
+<body>
+    <nav><button>
+        <a href="/TVSection">Go back to TV Section</a>
+    </button></nav>
+    <h1>
+        <%= oneTV.name %>
+    </h1>
+    <ul>
+        <li>
+            Size: <%= oneTV.size %>" 
+        </li>
+        <li>
+            Price: $
+            <%= oneTV.price %>
+                <% console.log(oneTV) %>
+        </li>
+        <form action="/computerSection/<%= oneTV._id %>?_method=DELETE" method="POST">
+            <button>Delete This Listing</button>
+        </form>
+        <button><a href="/computerSection/<%= oneTV._id %>/edit ">Edit this Item</a></button>
+    </ul>
+</body>
+
+</html>
