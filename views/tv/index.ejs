@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Section</title>
+</head>
+
+<body>
+    <h1>Welcome to TV Section</h1>
+    <nav>
+        <a href="/TVSection/createListing">Create New Listing</a>
+    </nav>
+    <ul>
+
+        <% tvList.forEach(tv => { %>
+            <li>
+                <a href="/TVSection/<%= tv._id %> ">
+                    <%= tv.name %>
+                </a>
+            </li>
+            <% }) %>
+                <% if (tvList.length === 0) { %>
+                    <p>There is no listing yet.</p>
+                    <% } %>
+    </ul>
+</body>
+
+</html>

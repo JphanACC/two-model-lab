@@ -7,6 +7,7 @@ app.set('view engine', 'ejs')
 
 //setting up controllers
 const computerController = require('./controllers/compController')
+const tvController = require('./controllers/tvController')
 
 //middleware Stuff
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,6 +21,9 @@ app.get('/', (req, res) => {
 
 //Computer route
 app.use("/computerSection", computerController)
+
+//TV route
+app.use("/TVSection", tvController);
 
 
 //listener
