@@ -53,5 +53,23 @@ router.delete('/:listingIndex', (req, res) => {
     })
 })
 
+//NOTE Edit Page
+router.get('/:listingIndex/edit', (req, res) => {
+    db.TV.findById(req.params.listingIndex, (err, editListingDB) => {
+        if (err) return res.send(err);
+        res.render('tv/edit.ejs', {
+            editListing: editListingDB
+        })
+    })
+})
+
+//Update Router
+router.put('/:listingIndex', (req, res) => {
+db.TV.findByIdAndUpdate(req.params.listingIndex, req.body, { new: true }, (err, editDB) => {
+    if (err) return res.send(err);
+    res.redirect(`/TVSection/${req.params.listingIndex}`)
+})
+})
+
 
 module.exports = router;

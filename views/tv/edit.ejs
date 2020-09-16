@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= editListing.name %> </title>
+</head>
+
+<body>
+    <h1>Edit Listing</h1>
+    <form action="/TVSection/<%= editListing._id %>?_method=PUT" Method="POST">
+        <br><button><a href="/TVSection/">Go back to TV Section</a></button>
+
+        <br>Item name: <input type="text" name="name" value="<%= editListing.name %>"/>
+        <br>Size: <input type='number' name='size' value="<%= editListing.size %>" />
+        <br>Price: $<input type="number" name="price" value="<%=editListing.price%>"/>
+
+        <br><input type="submit" value="Change TV Listing">
+    </form>
+</body>
+
+</html>
