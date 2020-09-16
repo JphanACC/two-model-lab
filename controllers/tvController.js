@@ -45,5 +45,13 @@ router.get('/:listingIndex', (req, res) => {
     })
 })
 
+//NOTE Delete
+router.delete('/:listingIndex', (req, res) => {
+    db.TV.findByIdAndDelete(req.params.listingIndex, (err, deletedListingDB) => {
+        if (err) return res.send(err);
+        res.redirect('/TVSection/')
+    })
+})
+
 
 module.exports = router;
